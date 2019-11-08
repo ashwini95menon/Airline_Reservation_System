@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Airline_Master.master.cs" Inherits="Airline_Reservation_System.Airline_Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Styles/Airline_style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder> 
+    <style type="text/css">
+        .auto-style4 {
+            width: 20%;
+        }
+    </style>
+    
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div>
+      <div>
+        <div class="header">
+            <h1> AIRLINE RESERVATION SYSTEM</h1>
+        
+             <img src="flight.jpg"  style="height: 142px;width:100%; margin-top: 0px;"/> </div>
+      </div>
+         <div class="nav" style="height:10%">
+
+             <table id="menu">
+                 <tr class="menurow">
+                     <td class="auto-style4" style="width:20%">
+                         <asp:HyperLink ID="Home" runat="server" NavigateUrl="~/Home.aspx" ForeColor="White" Font-Bold="True" CssClass="links">Home</asp:HyperLink>
+                     </td>
+                     <td style="width:16%; text-decoration: none;">
+                         <asp:HyperLink ID="AboutUs" runat="server" NavigateUrl="~/AboutUs.aspx" ForeColor="White" CssClass="links">About Us</asp:HyperLink>
+                        </td>  
+                     <%--<td style="width:16%;">
+                         <asp:HyperLink ID="MyProfile" runat="server" NavigateUrl="~/MyProfile.aspx" ForeColor="White" Visible="False" CssClass="links">My Profile</asp:HyperLink>
+                      </td>  --%>
+                     <td>
+                         <asp:Menu id="account" Runat="server" Visible="false" ForeColor="White"  
+                              StaticDisplayLevels="1" MaximumDynamicDisplayLevels="3"
+                             orientation="vertical" BackColor="#0000CC" ItemWrap="True">
+
+                             <DynamicHoverStyle BackColor="Blue" BorderColor="#000066" BorderStyle="Solid" ForeColor="White" />
+                             <DynamicMenuItemStyle BackColor="#3333FF" BorderColor="White" ForeColor="White" />
+
+                             <Items>
+                                 <asp:MenuItem Text="My Account" Value="My Account">
+                                     <asp:MenuItem NavigateUrl="~/MyProfile.aspx" Text="My Profile" Value="My Profile"></asp:MenuItem>
+                                     <asp:MenuItem NavigateUrl="~/BookingHistory.aspx" Text="My Bookings" Value="My Bookings"></asp:MenuItem>
+                                     <asp:MenuItem NavigateUrl="~/CancellationHistory.aspx" Text="My Cancellations" Value="My Cancellations"></asp:MenuItem>
+                                 </asp:MenuItem>
+                             </Items>
+                          </asp:Menu> 
+
+                         <%--<asp:HyperLink ID="MyAccount" runat="server" Visible="false">My Account</asp:HyperLink>--%>
+                        <%-- <asp:DropDownList ID="DropDownList1" runat="server" Visible="false" onmouseover="open_ddl('DropDownList1')" onmouseout="close_ddl('DropDownList1')" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
+                             <asp:ListItem>My Account</asp:ListItem>
+                             <asp:ListItem>My Profile</asp:ListItem>
+                           <asp:ListItem>My Bookings</asp:ListItem>
+                           <asp:ListItem>My Cancellations</asp:ListItem>
+                         </asp:DropDownList>--%>
+                         
+
+
+                     </td>
+                     <td style="width:16%;">
+                         <asp:HyperLink ID="Logout" runat="server" NavigateUrl="~/Logout.aspx" ForeColor="White" Visible="False" CssClass="links">Logout</asp:HyperLink>
+                        </td>
+                     <td style="width:16%;" >
+                         <asp:HyperLink ID="Login" runat="server" NavigateUrl="~/Login.aspx" ForeColor="White" CssClass="links">Login</asp:HyperLink>
+                     </td>
+                     <td style="width:16%;" >
+                         <asp:HyperLink ID="SignUp" runat="server" NavigateUrl="~/RegisterPage.aspx" ForeColor="White" CssClass="links">Sign Up</asp:HyperLink>
+                    </td>
+                     
+                 </tr>
+             </table>
+
+         </div><br />
+         <div class="container">
+         <div class="main">
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+         </div>
+         <div class="footerpad">
+             <h2>Copyright &copy LTI 2017</h2>
+         </div>
+             </div>
+     </div>
+    </form>
+</body>
+</html>
